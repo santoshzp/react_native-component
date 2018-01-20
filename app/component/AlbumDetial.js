@@ -3,8 +3,9 @@ import {View, Image, Text} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Button from './Button';
 const AlbumDetail = ({album}) => {
-    const {title, artist, thumbnail_image} = album;
+    const {title, artist, image, thumbnail_image, url} = album;
     return (
         <Card>
             <CardSection>
@@ -18,6 +19,19 @@ const AlbumDetail = ({album}) => {
                     <Text style={styles.headerTextStyle}>{title}</Text>
                     <Text>{artist}</Text>
                 </View>
+            </CardSection>
+            <CardSection>
+                <Image
+                    source={{uri: image}}
+                    style={styles.imageStyleSecond}
+
+                />
+            </CardSection>
+            <CardSection>
+                <Button
+                    url={url}
+                    title={'Bay Now'}
+                />
             </CardSection>
         </Card>
     );
@@ -36,6 +50,11 @@ const styles = {
     imageStyle: {
         height: 50,
         width: 50
+    },
+    imageStyleSecond: {
+        height: 300,
+        width: null,
+        flex: 1
     },
     thumbnaillContainerStyle: {
         justifyContent: 'center',

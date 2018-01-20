@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './app/component/header';
 import AlbumList from './app/component/AlbumList';
 const App = () => (
-    <View>
+    <View style={{flex: 1}}>
         <Header headerText={'Login'}/>
         <AlbumList/>
     </View>
